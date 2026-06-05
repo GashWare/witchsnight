@@ -4,7 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Join us for Kankakee Witches Night Out on October 3, 2026. A magical evening of vendors, readings, cocktails, and community supporting Harbor House.">
+    
+    <!-- SEO Optimization & Social Sharing Data -->
+    <meta name="keywords" content="Kankakee, Witches Night Out, Halloween Event, Psychic Readings, Harbor House Fundraiser, On The Rox, Illinois events, metaphysical, tarot">
+    <meta property="og:title" content="Kankakee Witches Night Out 2026">
+    <meta property="og:description" content="A magical evening of vendors, readings, cocktails, and community supporting Harbor House.">
+    <meta property="og:url" content="https://k3witchsnight.pages.dev/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://k3witchsnight.pages.dev/og-image.jpg">
+    <link rel="canonical" href="https://k3witchsnight.pages.dev/">
+    
     <title>Kankakee Witches Night Out 2026</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔮</text></svg>">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Kankakee Witches Night Out",
+      "startDate": "2026-10-03T17:00:00-05:00",
+      "endDate": "2026-10-03T23:00:00-05:00",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "On The Rox",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "670 W Station St",
+          "addressLocality": "Kankakee",
+          "addressRegion": "IL",
+          "postalCode": "60901",
+          "addressCountry": "US"
+        }
+      },
+      "description": "A magical evening of vendors, readings, cocktails, and community supporting Harbor House.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://k3witchsnight.pages.dev/",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -153,9 +197,72 @@
             max-height: 300px; /* Arbitrary large enough height */
             opacity: 1;
         }
+
+        /* Flying Witch Animation */
+        .witch-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 30; /* Raised above background sections so she is visible */
+            overflow: hidden;
+        }
+        .witch-path {
+            position: absolute;
+            animation: flyAcross 25s linear infinite;
+            opacity: 0;
+        }
+        .witch-bob {
+            animation: bob 3.5s ease-in-out infinite;
+        }
+        @keyframes flyAcross {
+            0% { transform: translate(-200px, 70vh) rotate(5deg) scale(0.6); opacity: 0; }
+            10% { opacity: 0.85; }
+            90% { opacity: 0.85; }
+            100% { transform: translate(110vw, 15vh) rotate(-15deg) scale(0.8); opacity: 0; }
+        }
+        @keyframes bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
     </style>
 </head>
 <body class="antialiased font-sans">
+
+    <!-- Flying Witch Background Animation -->
+    <div class="witch-container" aria-hidden="true">
+        <div class="witch-path">
+            <div class="witch-bob">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="currentColor" class="w-32 h-32 md:w-48 md:h-48 text-witch-400 drop-shadow-[0_0_15px_rgba(192,132,252,0.8)]">
+                    <g transform="rotate(-10, 100, 100)">
+                        <!-- Broom Handle -->
+                        <rect x="30" y="120" width="150" height="6" rx="3" />
+                        <!-- Broom Bristles -->
+                        <path d="M 45 115 L 15 95 L 5 123 L 15 150 L 45 131 Z" />
+                        <!-- Flowing Cape -->
+                        <path d="M 75 70 C 40 60 20 75 10 85 C 30 90 55 85 70 80 Z" />
+                        <!-- Witch Torso / Dress -->
+                        <path d="M 115 120 C 115 80 95 70 85 60 C 70 80 50 110 55 120 Z" />
+                        <!-- Head -->
+                        <circle cx="85" cy="55" r="11" />
+                        <!-- Pointy Nose -->
+                        <path d="M 94 53 L 108 56 L 94 59 Z" />
+                        <!-- Hat Brim -->
+                        <ellipse cx="85" cy="43" rx="26" ry="4" />
+                        <!-- Hat Cone -->
+                        <path d="M 65 43 Q 80 5 110 5 Q 95 25 100 43 Z" />
+                        <!-- Leg / Foot -->
+                        <path d="M 90 120 L 85 135 L 95 135 Z" />
+                        <path d="M 92 133 L 108 133 L 108 137 L 92 137 Z" />
+                        <!-- Arm holding broom -->
+                        <path d="M 85 75 C 105 80 120 100 125 120 L 118 122 C 113 105 100 87 85 82 Z" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="glass-header sticky top-0 z-50 border-b border-witch-600 transition-all duration-300">
@@ -217,12 +324,25 @@
             </p>
             
             <!-- CTA Container -->
-            <div class="flex flex-col items-center">
-                <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" class="btn-premium px-8 py-4 md:px-10 md:py-5 rounded-lg text-white text-lg font-bold border border-white/20 inline-flex items-center gap-2 group">
-                    <span>Secure Your Tickets on Eventbrite</span>
-                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-                <span class="block mt-4 text-sm md:text-base text-gray-400 font-medium flex items-center gap-2">
+            <div id="tickets-section" class="flex flex-col items-center w-full max-w-3xl mx-auto">
+                <!-- Eventbrite Embedded Checkout -->
+                <div id="checkout-container" class="w-full bg-witch-900/60 backdrop-blur-md rounded-xl border border-witch-600 p-2 md:p-4 shadow-2xl">
+                    <div id="eventbrite-widget-container-1968220000003" class="w-full min-h-[425px]"></div>
+                </div>
+                
+                <!-- Fallback Button (Shows only when HTTPS is not detected) -->
+                <div id="fallback-ticket-btn" class="hidden w-full text-center">
+                    <div class="bg-witch-800/80 border border-witch-600 backdrop-blur-md p-6 md:p-8 rounded-xl shadow-2xl">
+                        <p class="text-gray-300 text-sm mb-4">
+                            <span class="text-witch-gold font-bold">Note:</span> The embedded checkout is hidden while previewing locally for security. It will automatically appear when published to a live website.
+                        </p>
+                        <a href="https://www.eventbrite.com/e/1968220000003" target="_blank" class="btn-premium px-8 py-4 rounded-lg text-white font-bold text-lg inline-block">
+                            Buy Tickets on Eventbrite
+                        </a>
+                    </div>
+                </div>
+
+                <span class="block mt-6 text-sm md:text-base text-gray-300 font-medium flex items-center justify-center gap-2 bg-witch-800/80 px-4 py-2 rounded-full border border-witch-600 shadow-lg">
                     <span class="text-witch-gold">✨</span> Every ticket includes a complimentary Signature Cocktail or Mocktail! <span class="text-witch-gold">✨</span>
                 </span>
             </div>
@@ -449,8 +569,8 @@
                     <div class="text-6xl text-witch-500 mb-6 animate-pulse-slow" aria-hidden="true">🏰</div>
                     <h4 class="font-serif text-2xl font-bold text-white mb-2">On The Rox</h4>
                     <p class="text-gray-400 mb-8">670 W Station St.<br>Kankakee, IL 60901</p>
-                    <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" class="btn-premium px-6 py-3 rounded-lg text-white font-bold text-sm">
-                        Get Directions & Tickets
+                    <a href="#tickets-section" class="btn-premium px-6 py-3 rounded-lg text-white font-bold text-sm">
+                        Scroll Up to Secure Tickets
                     </a>
                 </div>
                 
@@ -488,6 +608,41 @@
                     mobileMenu.classList.remove('open');
                 });
             });
+        });
+    </script>
+
+    <!-- Eventbrite Embedded Checkout Script -->
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            // Eventbrite requires HTTPS for the checkout iframe to render
+            const isHttps = window.location.protocol === 'https:';
+
+            if (!isHttps) {
+                // If viewing locally, hide the empty widget container and show the direct link button
+                const checkoutContainer = document.getElementById('checkout-container');
+                const fallbackBtn = document.getElementById('fallback-ticket-btn');
+                
+                if (checkoutContainer) checkoutContainer.style.display = 'none';
+                if (fallbackBtn) fallbackBtn.classList.remove('hidden');
+                console.warn('Eventbrite widget requires HTTPS. Displaying fallback direct link instead.');
+            } else {
+                // If on a secure server, initialize the Eventbrite Widget securely
+                var exampleCallback = function() {
+                    console.log('Order complete!');
+                };
+
+                window.EBWidgets.createWidget({
+                    // Required
+                    widgetType: 'checkout',
+                    eventId: '1968220000003',
+                    iframeContainerId: 'eventbrite-widget-container-1968220000003',
+
+                    // Optional
+                    iframeContainerHeight: 425,
+                    onOrderComplete: exampleCallback
+                });
+            }
         });
     </script>
 </body>
